@@ -1,0 +1,9 @@
+FROM node:15.7.0-alpine
+
+WORKDIR /usr/src/app/react-app
+
+COPY react-app/package.json react-app/yarn.lock ./
+
+RUN npm install -g npm && npm install && yarn install
+
+EXPOSE 3000
